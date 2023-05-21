@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 class PlacesList extends React.Component {
   render () {
@@ -12,5 +12,5 @@ class PlacesList extends React.Component {
 }
 
 
-const PlacesList = ReactDOM.createRoot(document.getElementById('places-list-container'));
-PlacesList.render(< PlacesList />)
+const placesList = ReactDOM.createRoot(document.getElementById('places-list-container'));
+placesList.render(< PlacesList />)
