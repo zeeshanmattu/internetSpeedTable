@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom/client";
+import { Link } from "react-router-dom";
 
-
-
-const PlacesList = () => {
+export default PlacesList = () => {
   const [loading, setLoading] = useState(true);
   const [places, setPlaces] = useState([]);
-  const [query, setQuery] = useState(null)
+  const [query, setQuery] = useState("")
 
   useEffect(()=>{
-    const apiEndPoint = `api/places?query=${query}`
+    const apiEndPoint = `api/places?search_term=${query}`
     fetch(apiEndPoint)
     .then( response => response.json() )
     .then( data => {
@@ -62,9 +60,9 @@ const PlacesList = () => {
                     <button type="submit" className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                 </div>
             </form>
-            <button className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
+            <Link to="/new-internet-speed" className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
                 <p className="text-sm font-medium leading-none text-white">Add Task</p>
-            </button>
+            </Link>
         </div>
         {body}
       </div>
@@ -112,10 +110,6 @@ const PlacesList = () => {
     <div>Loading content...</div>
   )
 
-
-
-
-
   return(
     <>
       {
@@ -127,6 +121,3 @@ const PlacesList = () => {
     </>
   )
 }
-
-const placesList = ReactDOM.createRoot(document.getElementById('places-list-container'));
-placesList.render(< PlacesList />)
