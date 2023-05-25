@@ -17,8 +17,25 @@ const router = createBrowserRouter([
   {
     path: "/new-internet-speed",
     element: <InternetSpeedForm />
+  },
+  {
+    path: "/profile",
+    element: <Places />,
+  },
+  {
+    path: "/login",
+    element: <Places />
+  },
+  {
+    path: "/signup",
+    element: <Places />,
+  },
+  {
+    path: "/place",
+    element: <Places />
   }
 ]);
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
