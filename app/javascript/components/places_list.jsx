@@ -77,7 +77,7 @@ export default PlacesList = () => {
             <table className="min-w-full">
               <thead className="bg-gray-200 border-b">
                 <tr>
-                  <th scope="col" className={HeaderStyle}>Name</th>
+                  <th scope="col" className={HeaderStyle + ' text-gray-300'}>Name</th>
                   <th scope="col" className={HeaderStyle}>City</th>
                   <th scope="col" className={HeaderStyle}>Recent Upload Speed</th>
                   <th scope="col" className={HeaderStyle}>Recent Upload Speed Units</th>
